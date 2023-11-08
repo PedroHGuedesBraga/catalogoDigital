@@ -1,0 +1,62 @@
+POST http://localhost:3000/api/auth/login
+content-type: application/json
+
+{
+    "email": "pedroo@",
+    "password":"1234"
+}
+
+###
+
+GET http://localhost:3000/api/user
+
+###
+GET http://localhost:3000/api/user/654c01715e44a6bf4b12fd3c
+
+###
+DELETE http://localhost:3000/api/user/6549395ba7bdbb7b78a2132e
+
+###
+
+PUT http://localhost:3000/api/user/654937202a31c241047ab9bb
+content-type: application/json
+
+{
+    "email": "pedroo@",
+    "password":"1234"
+}
+
+###
+POST http://localhost:3000/api/product
+content-type: application/json
+
+{
+    "name": "Baton teste JWT",
+    "price":12,
+    "description":"Baton",
+    "img":"src"
+    
+}
+###
+GET http://localhost:3000/api/product
+
+###
+GET http://localhost:3000/api/product/654947e9a096d6fc37aa3d9a
+
+###
+DELETE  http://localhost:3000/api/product/65494b52fee5c48a84522b41
+
+###
+PUT http://localhost:3000/api/product/654947e9a096d6fc37aa3d9a
+content-type: application/json
+
+{
+    "name": "Baton 2 updated",
+    "price":122,
+    "description":"Baton2",
+    "img":"sr2c"
+    
+} 
+
+
+
