@@ -22,7 +22,7 @@ PUT http://localhost:3000/api/user/654937202a31c241047ab9bb
 content-type: application/json
 
 {
-    "email": "pedroo@",
+    "email": "pedro@",
     "password":"1234"
 }
 
