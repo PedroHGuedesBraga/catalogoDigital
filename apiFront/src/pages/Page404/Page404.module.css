@@ -1,0 +1,25 @@
+.titulo2{
+    padding-top: 10rem;
+    color: whitesmoke;
+    text-transform: uppercase;
+    -webkit-text-stroke: 0.5px black;
+    font-size: 30px;
+
+}
+.texto{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: whitesmoke;
+    text-transform: uppercase;
+    -webkit-text-stroke: 0.5px black;
+}
+
+.texto span{
+    font-size: 100px;
+}
+.texto strong{
+    font-size: 30px;
+}

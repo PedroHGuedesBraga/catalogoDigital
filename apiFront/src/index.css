@@ -1,0 +1,19 @@
+:root {
+  font-family: 'Roboto', monospace;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --orange:#ff6600;
+  --white-gray:#f1f1f1;
+  background-color: #fbad8b;
+   min-height: 100vh;
+
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  };
+
