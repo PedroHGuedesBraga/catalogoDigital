@@ -7,7 +7,8 @@
   --orange:#ff6600;
   --white-gray:#f1f1f1;
   background-color: #fbad8b;
-   min-height: 100vh;
+  min-height: 100vh;
+  backdrop-filter: blur(10px);
 
 }
 

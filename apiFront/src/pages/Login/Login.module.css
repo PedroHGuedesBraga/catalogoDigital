@@ -1,0 +1,55 @@
+.login {
+    width: 100%;
+    height: 85vh;
+    display:flex;
+    flex-direction: column;
+    /*Flex-direction colum : ficar empilhado */
+    align-items: center;
+    /*Para ficar mais centralizado ainda Justify content*/
+    justify-content: center;
+    /*Quando queremos dar espaçi, entre elementos do nosso display flex, utilizamos o gap:*/
+    
+    
+
+}
+.login h3{
+    font-size: 30px;
+    align-items: center;
+    color: whitesmoke;
+   
+    justify-content: center;
+    -webkit-text-stroke: 0.5px black;
+}
+.login button{
+    width: 150px;
+    height:50px;
+    background-color: var(--orange);
+    border-radius: 10px;
+    font-family: 'Roboto', monospace;
+    font-size: 20px;
+    color: aliceblue;
+    border-width: 0.5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+}
+.login input{
+    width: 250px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 7px ;
+    border-width: 0.5px;
+    outline: none; /* Remove a borda de foco */
+    padding-left: 5px; /* Adiciona espaçamento à esquerda */
+}
+
+input:focus {
+    border: 2px solid var(--orange); /* Adiciona uma borda azul quando o input está em foco */
+  }
