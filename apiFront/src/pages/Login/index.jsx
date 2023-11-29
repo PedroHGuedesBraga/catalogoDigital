@@ -41,7 +41,7 @@ function Login() {
                         </label>
                         <br />
                         <br />
-                        <button className={styles.button} type="submit">Login</button>
+                        <button className={styles.button} type="submit">LOGIN</button>
                       
                     </form>
                 </div>
