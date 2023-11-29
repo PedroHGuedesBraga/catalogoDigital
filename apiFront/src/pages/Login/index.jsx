@@ -1,6 +1,4 @@
-import Header from "../../components/Header"
-import Footer from '../../components/Footer'
-import Container from "../../components/Container"
+
 import React, { useState, Button } from 'react';
 import styles from './Login.module.css';
 
@@ -26,8 +24,6 @@ function Login() {
     };
     return (
         <>
-            <Header />
-            <Container>
                 <div className={styles.login}>
                     <form onSubmit={handleSubmit}>
                         <label>
@@ -45,8 +41,7 @@ function Login() {
                       
                     </form>
                 </div>
-            </Container>
-            <Footer />
+            
         </>
 
     )

@@ -1,16 +1,11 @@
 
-import Header from "../../components/Header"
-import Footer from "../../components/Footer"
 import { Link } from "react-router-dom"
-import Container from "../../components/Container"
 import styles from './Home.module.css'
 
 function Home() {
   return (
     <>
-      <Container>
-
-        <Header />
+      
         <section className={styles.home}>
           <div className='apresentacao'>
 
@@ -25,8 +20,6 @@ function Home() {
 
           </div>
         </section>
-        <Footer />
-      </Container>
 
     </>
   )
