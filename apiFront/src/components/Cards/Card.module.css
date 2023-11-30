@@ -23,10 +23,12 @@
 .card h3{
     font-family: 'Roboto', monospace;
     font-size: 20px;
-    color: var(--orange);
+    color: white;
     text-transform: uppercase;
     -webkit-text-stroke: 0.5px black;
 }
+
+
 
 
 
