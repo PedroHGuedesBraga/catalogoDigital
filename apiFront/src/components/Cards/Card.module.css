@@ -28,9 +28,10 @@
     -webkit-text-stroke: 0.5px black;
 }
 
-
-
-
-
+.btnOrange{
+ color: var(--orange);
+ text-decoration: none;
+   
+}
 
 

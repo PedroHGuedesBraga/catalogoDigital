@@ -1,4 +1,6 @@
 import styles from './Card.module.css'     
+import { Link } from "react-router-dom"
+
 
 // eslint-disable-next-line react/prop-types
 function Card({name,img, price}){
@@ -10,6 +12,7 @@ function Card({name,img, price}){
             <div className={styles.rodape}>
                 <h3>{price} R$</h3>
             </div>
+            <Link className={styles.btnOrange} to={'/detail'}>VER</Link>
 
 
         </section>
