@@ -7,7 +7,6 @@ function Card({name,img, price, _id}){
     return(
         <section className={styles.card}>
             <h3>{name}</h3>
-            <h1>{_id}</h1>
             <img src={img} alt="Imagem" />
             
             <div className={styles.rodape}>

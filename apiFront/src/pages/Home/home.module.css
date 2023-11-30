@@ -41,7 +41,21 @@
    
 }
 
-    
+/*Aula 11 Responsividade */  
+ @media (max-width:768px){
+    .home{
+        flex-direction: column;
+
+    }
+ }
+
+ @media (max-width:375px){
+    .home h1{
+        font-size: 20px;
+        
+
+    }
+ }
     
 
 

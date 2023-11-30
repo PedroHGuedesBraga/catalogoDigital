@@ -41,6 +41,7 @@ function Detail() {
           img={produto.img}
           price={produto.price}
           description={produto.description}
+          _id={produto._id}
         />
       </section>
     </>
