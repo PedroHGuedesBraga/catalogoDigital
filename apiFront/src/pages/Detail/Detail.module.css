@@ -1,0 +1,55 @@
+/* Detail.module.css */
+
+.detail {
+    display: flex;
+    width: 1000px;
+    height: 800px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 5px 5px 10px #222222d2;
+  }
+  
+  .imageContainer {
+    flex: 1;
+  }
+  
+  .image {
+    width:300px;
+    height: 300px;
+    object-fit: cover;
+   margin-top: 50%;
+   margin-left: 10%;
+  }
+  
+  .productDetails {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .title {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .price {
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+  
+  .description {
+    
+    border-radius: 10px;
+    font-size: 16px;
+    max-width: 50%;
+    max-height: 200px; /* Altura máxima da descrição */
+    overflow: auto; /* Adiciona uma barra de rolagem quando o conteúdo ultrapassar a altura máxima */
+    white-space: normal; /* Permite a quebra de linha dentro da descrição */
+  }

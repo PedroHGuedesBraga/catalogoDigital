@@ -1,5 +1,6 @@
 import styles from './Card.module.css'     
 
+// eslint-disable-next-line react/prop-types
 function Card({name,img, price}){
     return(
         <section className={styles.card}>
