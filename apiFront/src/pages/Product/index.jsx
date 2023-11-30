@@ -36,7 +36,7 @@ function Product() {
                                 name ={prod.name} 
                                 img={prod.img} 
                                 price={prod.price}
-                    
+                                _id={prod._id}
                             />   
                             ))
                           }       

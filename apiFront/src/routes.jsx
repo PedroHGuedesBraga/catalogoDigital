@@ -4,7 +4,7 @@ import Contact from './pages/Contact'
 import Product from './pages/Product'
 import Login from './pages/Login'
 import Page404 from './pages/Page404'
-import Detail from './pages/detail'
+import Detail from './pages/Detail'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Container from './components/Container'
@@ -19,7 +19,7 @@ function AppRoutes() {
                     <Route path='/login' element={<Login />}></Route>
                     <Route path='/produtos' element={<Product />}></Route>
                     <Route path='/contato' element={<Contact />}></Route>
-                    <Route path='/detail' element={<Detail/>}></Route>
+                    <Route path='/detail/:_id' element={<Detail/>}></Route>
                     <Route path='*' element={<Page404 />}></Route>
                 </Routes>
             </Container>
