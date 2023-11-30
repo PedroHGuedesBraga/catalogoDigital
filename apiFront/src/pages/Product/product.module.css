@@ -1,6 +1,16 @@
-.teste{
+.produtos h2{
+    text-align: center;
+    
+}
+
+.lista{
+    width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    /*flex-wrap quebra a linha */
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     gap: 1.5rem;
-    padding-top: 10px;
+    margin-block: 1.5rem;
+
 }

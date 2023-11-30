@@ -1,12 +1,14 @@
 import styles from './Card.module.css'     
 
-function Card(){
+function Card({name,img, price}){
     return(
         <section className={styles.card}>
-            <h3>BASE NINA SECRETS</h3>
-            <p>IMAGEM</p>
-            <div className={styles.card_footer}>
-                <h3>120.00 R$</h3>
+            <h3>{name}</h3>
+            
+            <img src={img} alt="Imagem" />
+            
+            <div className={styles.rodape}>
+                <h3>Preço : {price} R$</h3>
             </div>
 
 
