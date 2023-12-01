@@ -1,49 +1,74 @@
-
-import React, { useState, Button } from 'react';
+// eslint-disable-next-line no-unused-vars
+import React, { useState } from 'react';
 import styles from './Login.module.css';
 
-
 function Login() {
-    const [login, setLogin] = useState('');
-    const [senha, setSenha] = useState('');
+  const [login, setLogin] = useState('');
+  const [senha, setSenha] = useState('');
 
-    // Manipuladores de eventos para atualizar os estados
-    const handleLoginChange = (event) => {
-        setLogin(event.target.value);
+  const handleClick = (event) => {
+    event.preventDefault();
+    
+    // Configurar os dados que você deseja enviar no corpo da requisição
+    const dados = {
+      email: login,
+      password: senha,
     };
 
-    const handleSenhaChange = (event) => {
-        setSenha(event.target.value);
+    // Configurar as opções da requisição
+    const opcoesFetch = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(dados),
     };
 
-    // Manipulador de evento para lidar com o envio do formulário (pode adicionar lógica de autenticação aqui)
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log('Login:', login, 'Senha:', senha);
-        // Adicione aqui a lógica de autenticação, por exemplo, uma chamada de API para verificar credenciais
-    };
-    return (
-        <>
-                <div className={styles.login}>
-                    <form onSubmit={handleSubmit}>
-                        <label>
-                            <h3>Login</h3>
-                            <input className={styles.input} type="text" value={login} onChange={handleLoginChange} />
-                        </label>
-                        <br />
-                        <label>
-                            <h3>Senha</h3>
-                            <input className={styles.input} type="password" value={senha} onChange={handleSenhaChange} />
-                        </label>
-                        <br />
-                        <br />
-                        <button className={styles.button} type="submit">LOGIN</button>
-                      
-                    </form>
-                </div>
-            
-        </>
+    // Realizar a requisição fetch
+    fetch('http://localhost:3000/api/auth/login', opcoesFetch)
+      .then(response => response.json())
+      .then(data => {
+        // Lidar com os dados da resposta, se necessário
+        console.log('Resposta da API:', data);
+      })
+      .catch(error => {
+        // Lidar com erros, se houver
+        console.error('Erro na requisição:', error);
+      });
+  };
 
-    )
+  return (
+    <>
+      <div className={styles.login}>
+        <form>
+          <label>
+            <h3>Login</h3>
+            <input
+              className={styles.input}
+              type="text"
+              placeholder="Login"
+              value={login}
+              onChange={(e) => setLogin(e.target.value)}
+            />
+          </label>
+          <br />
+          <label>
+            <h3>Senha</h3>
+            <input
+              className={styles.input}
+              type="password"
+              placeholder="Senha"
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+            />
+          </label>
+          <br />
+          <br />
+          <button onClick={handleClick}>LOGIN</button>
+        </form>
+      </div>
+    </>
+  );
 }
-export default Login
+
+export default Login;
