@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react'
 import Card from '../../components/Cards'
 import styles from '../Product/product.module.css'
+
 function Product() {
     //Armazenar os produtos
     const [produtos, setProdutos] = useState([])
     //Para preencher a lista, precisa fazer uma requisição para a API
     //Use effect, dentro dele vai executar uma função, ao passar o [] vazio, siginfica que essa função vai ser executada apenas uma vez
-    useEffect(()=>{
-    //Precisa, fazer uma requesição para a API, ela vai ser asyncrona
-        const buscarProduto = async ()=> {
+    useEffect(() => {
+        //Precisa, fazer uma requesição para a API, ela vai ser asyncrona
+        const buscarProduto = async () => {
             /* basicamente : Espere o fetch ter sucesso, quando ele tivver sucesso, armazene na function reponse
             espere o response.json() ser finalizado, quando ele for finalizado, armazene o resultado em data
             */
@@ -22,33 +23,43 @@ function Product() {
         }
         buscarProduto()
 
-    },[])
+    }, [])
+    
+    const [query,setQuery] = useState('');
+    const produtosFiltrados = produtos.filter((prod) =>
+    prod.name.toLowerCase().includes(query.toLowerCase())
+  );
    
+
     return (
-        
-          <section className={styles.produtos}>
-            {   
-                produtos.length > 0 ? (
-                    <section className={styles.lista}>
-                          {
-                            produtos.map((prod)=>(
-                                <Card key={prod.id} 
-                                name ={prod.name} 
-                                img={prod.img} 
-                                price={prod.price}
-                                _id={prod._id}
-                            />   
-                            ))
-                          }       
-                    </section>
-                ) : (
-                    <p>Carregando Produtos</p>
-                )
-            }
-          </section>
-             
-                
-       
-    )
+        <section className={styles.produtos}>
+        <div className={styles.searchbar}> 
+            <input placeholder="Buscar Produto" id="meuInput" className={styles.input}
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            />
+        </div>
+        {produtos.length > 0 ? (
+            <section className={styles.lista}>
+            {produtosFiltrados.length > 0 ? (
+                produtosFiltrados.map((prod) => (
+                <Card
+                    key={prod._id} // Utilizei _id para a chave única, ajuste conforme necessário
+                    name={prod.name}
+                    img={prod.img}
+                    price={prod.price}
+                    _id={prod._id}
+                />
+                ))
+            ) : (
+                <p>Nenhum produto encontrado.</p>
+            )}
+            </section>
+        ) : (
+            <p>Carregando Produtos</p>
+        )}
+        </section>
+    );
 }
 export default Product
