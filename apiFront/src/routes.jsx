@@ -8,7 +8,7 @@ import Detail from './pages/Detail'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Container from './components/Container'
-
+import GerenciarProduto from './pages/Gerenciar'
 function AppRoutes() {
     return (
         <BrowserRouter>
@@ -20,6 +20,7 @@ function AppRoutes() {
                     <Route path='/produtos' element={<Product />}></Route>
                     <Route path='/contato' element={<Contact />}></Route>
                     <Route path='/detail/:_id' element={<Detail/>}></Route>
+                    <Route path='/gerenciar' element={<GerenciarProduto />}></Route>
                     <Route path='*' element={<Page404 />}></Route>
                 </Routes>
             </Container>

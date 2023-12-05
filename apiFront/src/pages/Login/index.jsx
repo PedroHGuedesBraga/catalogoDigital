@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import styles from './Login.module.css';
 
@@ -6,35 +5,46 @@ function Login() {
   const [login, setLogin] = useState('');
   const [senha, setSenha] = useState('');
 
-  const handleClick = (event) => {
+  const handleClick = async (event) => {
     event.preventDefault();
-    
-    // Configurar os dados que você deseja enviar no corpo da requisição
-    const dados = {
-      email: login,
-      password: senha,
-    };
 
-    // Configurar as opções da requisição
-    const opcoesFetch = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(dados),
-    };
+    try {
+      // Configurar os dados que você deseja enviar no corpo da requisição
+      const dados = {
+        email: login,
+        password: senha,
+      };
 
-    // Realizar a requisição fetch
-    fetch('http://localhost:3000/api/auth/login', opcoesFetch)
-      .then(response => response.json())
-      .then(data => {
+      // Configurar as opções da requisição
+      const opcoesFetch = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dados),
+      };
+
+      // Realizar a requisição fetch
+      const response = await fetch('http://localhost:3000/api/auth/login', opcoesFetch);
+
+      // Verificar se a requisição foi bem-sucedida
+      if (response.ok) {
+        // Extrair o token do corpo da resposta
+        const { token } = await response.json();
+
+        // Armazenar o token no localStorage
+        localStorage.setItem('Authorization', token);
+
         // Lidar com os dados da resposta, se necessário
-        console.log('Resposta da API:', data);
-      })
-      .catch(error => {
-        // Lidar com erros, se houver
-        console.error('Erro na requisição:', error);
-      });
+        console.log('Resposta da API:', token);
+      } else {
+        // Lidar com erros na requisição
+        console.error('Erro na requisição:', response.statusText);
+      }
+    } catch (error) {
+      // Lidar com erros gerais
+      console.error('Erro na requisição:', error);
+    }
   };
 
   return (
