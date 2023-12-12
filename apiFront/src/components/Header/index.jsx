@@ -1,5 +1,5 @@
 import styles from './Header.module.css'
-import {Link,Navigate} from 'react-router-dom'
+import {Link,} from 'react-router-dom'
 
 function Header(){
     return(
